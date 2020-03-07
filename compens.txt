@@ -1,0 +1,25 @@
+  $slicer = $col_2->add(['View','template' => new \atk4\ui\Template('
+<div id="{$_id}" class="ui statistic">
+  <input type="button" id="clicke" value=0 onclick=Clicker() style="width:500px;height:100px;background-color:green;color:white;font-size:35px;">
+</div>
+<script>
+  function Clicker() {
+    var click = document.getElementById("clicke");
+    click.value = parseInt(click.value) + 1;
+  }
+</script>')]);
+
+
+
+
+  $save = $col_2->add(['View','template' => new \atk4\ui\Template('
+<div id="{$_id}" class="ui statistic">
+  <input type="button" value="Save" onclick=Save() style="width:500px;height:100px;background-color:green;color:white;font-size:35px;">
+</div>
+<script>
+  function Save() {
+    var click = document.getElementById("clicke");
+    var link = \'save.php?val=\'+click.value;
+    window.open(link);
+  }
+</script>')]);
